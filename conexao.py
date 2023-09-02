@@ -162,8 +162,8 @@ print(f"\n\nQuantidade de cliente com saldo maior que R$1000,00: {saldo_maior_10
  Escreva uma consulta para exibir o nome do cliente, o produto e o valor de cada compra.
 """
 
- # cursor.execute('''CREATE TABLE compras (id INT PRIMARY KEY, cliente_id INT, produto TEXT, valor REAL,
- # FOREIGN KEY (cliente_id) REFERENCES clientes(id))''')
+#  cursor.execute('''CREATE TABLE compras (id INT PRIMARY KEY, cliente_id INT, produto TEXT, valor REAL,
+#  FOREIGN KEY (cliente_id) REFERENCES clientes(id))''')
 
 # cursor.execute(' INSERT INTO compras (id, cliente_id, produto, valor) VALUES(1,2, "Celular", 2000)')
 # cursor.execute(' INSERT INTO compras (id,cliente_id,produto,valor) VALUES(2,2,"Televisão",3000)')
