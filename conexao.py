@@ -15,15 +15,16 @@ id (inteiro), nome (texto), idade (inteiro) e curso (texto).
  2. Insira pelo menos 5 registros de alunos na tabela que você criou no exercício anterior.
 """
 
-# cursor.execute('INSERT INTO alunos(id,nome,idade,curso) VALUES(1,"Anna",20,"Engenharia")')
-# # cursor.execute('INSERT INTO alunos(id,nome,idade,curso) VALUES(2,"Luís",22,"Enfermagem")')
-# # cursor.execute('INSERT INTO alunos(id,nome,idade,curso) VALUES(3,"Paulo",18,"Engenharia")')
-# # cursor.execute('INSERT INTO alunos(id,nome,idade,curso) VALUES(4,"Roberta",18,"ADS")')
-# # cursor.execute('INSERT INTO alunos(id,nome,idade,curso) VALUES(5,"Flávia",19,"Engenharia")')
-# # cursor.execute('INSERT INTO alunos(id,nome,idade,curso) VALUES(6,"Luna",24,"ADS")')
-# # cursor.execute('INSERT INTO alunos(id,nome,idade,curso) VALUES(7,"Fernando",21,"ADS")')
-# # cursor.execute('INSERT INTO alunos(id,nome,idade,curso) VALUES(8,"Diana",22,"Advocacia")')
-# # cursor.execute('INSERT INTO alunos(id,nome,idade,curso) VALUES(9,"Aline",19,"Engenharia")')
+# cursor.execute('''INSERT INTO alunos(id,nome,idade,curso) VALUES
+# (1,"Anna",20,"Engenharia"),
+# (2,"Luís",22,"Enfermagem"),
+# (3,"Paulo",18,"Engenharia"),
+# (4,"Roberta",18,"ADS"),
+# (5,"Flávia",19,"Engenharia"),
+# (6,"Luna",24,"ADS"),
+# (7,"Fernando",21,"ADS"),
+# (8,"Diana",22,"Advocacia"),
+# (9,"Aline",19,"Engenharia")''')
 
 
 """
@@ -40,9 +41,9 @@ for aluno in todos_alunos:
 
 """ b) Selecionar o nome e a idade dos alunos com mais de 20 anos. """
 
-nome_idade_maiores_20 = cursor.execute('SELECT nome, idade from alunos WHERE idade >= 20')
+nome_idade_maiores_20 = cursor.execute('SELECT nome, idade from alunos WHERE idade > 20')
 
-print("\n\nAlunos com mais de 20 anos(inclusivo):\n")
+print("\n\nAlunos com mais de 20 anos(eclusivo):\n")
 for aluno in nome_idade_maiores_20:
     print(aluno)
 
@@ -50,7 +51,7 @@ for aluno in nome_idade_maiores_20:
 
 alunos_engenharia_alfabetica = cursor.execute('SELECT * from alunos where curso = "Engenharia" ORDER BY nome')
 
-print("\n\nAlunos de Engenharia em ordem Alfabética\n")
+print("\n\nAlunos de Engenharia em ordem alfabética\n")
 for aluno in alunos_engenharia_alfabetica:
     print(aluno)
 
@@ -86,7 +87,7 @@ Crie uma tabela chamada "clientes" com os campos: id (chave primária), nome (te
 Insira alguns registros de clientes na tabela.
 """
 
-# cursor.execute('CREATE TABLE clientes (id PRIMARY KEY, nome VARCHAR(100), idade INT, saldo FLOAT)')
+# cursor.execute('CREATE TABLE clientes (id INTEGER PRIMARY KEY, nome VARCHAR(100), idade INT, saldo FLOAT)')
 
 # cursor.execute('INSERT INTO clientes(id, nome, idade, saldo) VALUES(1,"Anna",20,8500)')
 # cursor.execute('INSERT INTO clientes(id, nome, idade, saldo) VALUES(2,"Fred",30,18900)')
